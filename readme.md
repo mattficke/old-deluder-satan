@@ -1,4 +1,5 @@
-# School Info
+# School Wellness App
+
 # Description of the Project
 -> Our app offers a shift away from the traditional school rating and review websites. Too often not enough emphasis is placed on the student wellness atmosphere within schools. Just like a student is more than a test score, a school is more than its pass rate. Starting with cafeteria health inspection scores, we built a platform that gives DC parents a quick snapshot of key wellness indicators. In the future, we're looking forward to adding other key indicators, such as nearby police reports, fire safety violations, and playground conditions. Additionally, a planned slideshow featuring instagram photos uploaded on and around school grounds, gives helicopter parents the ultimate insiders look into their child's current or prospective school.
 
@@ -12,7 +13,7 @@
 # Installation Instructions
 -> To run locally, please ensure all dependencies are installed (thru running npm install). Additionally, please create a database called deluder. Our program is configured using postgresql (and a sequelize dependency). Run node config/migrate.js and node config/seeds.js to finish database setup. When setup is finished, run the app (nodemon app.js). You'll find the app running (if all goes well) on localhost:4000
 
-# Descriptions of Unresolved Problems or Major Hurdles Overcome
+# Descriptions of Unresolved Problems and Major Hurdles Overcome
 -> We ran into numerous bugs resulting from difficulty integrating the work from four separate coders. In some cases, a model, controller, and view were written by three different coders. As a result, it made switching gears and understanding the other coder's logic very difficult. After a challenging merge conflict causing a detrimental bug, we began documenting our work and conducting pair "merging" exercises.
 
 -> A minor glitch to resolve would be the stray schools in Tennessee and Maryland need to be corralled.
