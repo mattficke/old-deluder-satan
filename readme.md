@@ -13,7 +13,7 @@
 # Installation Instructions
 -> To run locally, please ensure all dependencies are installed (thru running npm install). Additionally, please create a database called deluder. Our program is configured using postgresql (and a sequelize dependency). Run node config/migrate.js and node config/seeds.js to finish database setup. When setup is finished, run the app (nodemon app.js). You'll find the app running (if all goes well) on localhost:4000
 
-# Descriptions of Unresolved Problems and Major Hurdles Overcome
+# Description of Unresolved Problems and Major Hurdles Overcome
 -> We ran into numerous bugs resulting from difficulty integrating the work from four separate coders. In some cases, a model, controller, and view were written by three different coders. As a result, it made switching gears and understanding the other coder's logic very difficult. After a challenging merge conflict causing a detrimental bug, we began documenting our work and conducting pair "merging" exercises.
 
 -> A minor glitch to resolve would be the stray schools in Tennessee and Maryland need to be corralled.
