@@ -45,11 +45,17 @@ router.get("/schools/:id/health-report", function(req, res){
 });
 
 router.get("/schools/:id/comments", function(req, res){
+  if(req.user) {
+    var user = {
+      username: req.user.username,
+      id: req.user.id
+    }
+  }
   School.findById(req.params.id)
   .then(function(school){
     if(!school) return error(res, "not found");
-    return school.getComments().then(function(comment){
-      res.json(comment);
+    return school.getComments().then(function(comments){
+      res.json({comments: comments, user: user || null});
     });
   });
 });

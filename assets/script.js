@@ -21,7 +21,7 @@ $(document).ready(function() {
 
   function renderSearch(schools) {
     //string that will have an option added on each pass of the loop
-    var options ='<option>Select a school</option>';
+    var options ='<option>Select a school &#9663;</option>';
     schools.forEach(function(school){
       //add an option html string with this school's id and name
       var id = school.id;

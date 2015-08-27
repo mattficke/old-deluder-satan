@@ -1,0 +1,30 @@
+@media(min-width: 0px) {
+	.map {
+		height: 50vh;
+		width: 100vw;
+	}
+
+	.column-lg-5, .map.column-lg-7 {
+		width: 100%;
+	}
+
+}
+
+@media(min-width: 40em) {
+	.map {
+		height: 100vh;
+		width: 58.33vw;
+	}
+
+	.column {
+		float: left;
+	}
+
+	.column-lg-5 {
+		width: 41.66%;
+	}
+	.map.column-lg-7 {
+		width: 58.33%;
+	}
+
+}

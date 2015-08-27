@@ -11,7 +11,8 @@ CommentView.prototype ={
     // appending elements to the .$el property
     self.$el.html(self.commentTemplate(self.comment));
     // append the .$el to the div with class artists in our view.
-    $(".comments").append(self.$el);
+    var commentDiv = $(".comments")
+    commentDiv.append(self.$el);
   },
   commentTemplate: function(comment){
     var html = $("<div>");

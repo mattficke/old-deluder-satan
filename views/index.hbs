@@ -5,25 +5,50 @@
 </div> -->
 
 <div class="row main">
-  <div id='map' class="column column-7"></div>
-  <div class="schools column column-5">
+  <div id='map' class="map column column-7"></div>
+
+  <div id='infoPanel' class="info column column-5">
+
+    <section class="user-bar">
+      {{#if user}}
+        Signed in as {{user}}.<a class="sign-out" href="/signout">Sign Out</a>
+      {{else}}
+        <a class="sign-in" href='/signin'>Sign In</a>
+        <a class="sign-up" href='/signup'>Sign Up</a>
+      {{/if}}
+    </section>
 
     <select id="schooloptions">
     </select>
 
-    <h4>School</h4>
+    <section class="name-and-address">
+      <h4 class="label">School</h4>
+      <h2 id='schoolLabel'>woodrow wilson senior high school</h2>
+      <h4 class="label">Address</h4>
+      <p id='addressLabel'>3950 chesapeake st nw</p>
+    </section>
 
-    <h2 id='schoolLabel'></h2>
-    <h4>Address:</h4>
-    <p id='addressLabel'></p>
-    <h4>Risk Category</h4>
-    <p id='riskLabel'></p>
-    <h4>Number of Critical Violations</h4>
-    <p id='criticalLabel'></p>
-    <h4>Number of Noncritical Violations</h4>
-    <p id='noncriticalLabel'></p>
-    <div class="comments">
-      <h1>Comment Section</h1>
+    <div class="flexcontain">
+
+      <div class="flexchild">
+        <h4 class="flexlabel">Risk Category</h4>
+        <p id='riskLabel'>3</p>
+      </div>
+
+      <div class="flexchild">
+        <h4 class="flexlabel">Critical Violations</h4>
+        <p id='criticalLabel'>1</p>
+      </div>
+
+      <div class="flexchild">
+        <h4 class="flexlabel">Noncritical Violations</h4>
+        <p id='noncriticalLabel'>2</p>
+      </div>
+
     </div>
+
+    <div class="comments"></div>
+
   </div>
+
 </div>
