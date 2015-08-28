@@ -50,7 +50,19 @@
 
     </div>
 
-      <div class="flexchild comments"></div>
+      <div class="flexchild comments">
+
+        {{#if user}}
+        <form class='comment-form'>
+          <input class='comment-field' type='text' name='body' placeholder='Add a comment'>
+          <input class='create-comment' type='submit' >
+        </form>
+        {{/if}}
+      </div>
+
+<!-- ul class comment,
+li class comment body,
+li class comment-author-->
 
   </div>
 

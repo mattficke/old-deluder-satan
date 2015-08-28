@@ -1,4 +1,22 @@
 /* -----------------------------------*/
+/* ---        VARIABLES            ---*/
+/* -----------------------------------*/
+/*
+ * Typography
+ */
+.link {
+  color: #34495e;
+  text-decoration: none; }
+  .link:visited {
+    color: purple; }
+  .link:hover, .link:visited:hover {
+    color: #25496d;
+    text-decoration: underline; }
+
+/* -----------------------------------*/
+/* ---          IMPORTS            ---*/
+/* -----------------------------------*/
+/* -----------------------------------*/
 /* ---           RESETS            ---*/
 /* -----------------------------------*/
 /*
@@ -100,6 +118,7 @@ html {
 /* ---           CORE              ---*/
 /* -----------------------------------*/
 body {
+  font-family: "Roboto", sans-serif;
   background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility; }
@@ -122,12 +141,12 @@ body {
   margin: 0 auto; }
 
 .sign-in, .sign-out, .sign-up, .current-user {
-  text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 1.2em;
-  line-height: 2.4em;
-  color: #7F7F7F; }
+  color: #7F7F7F;
+  text-decoration: none;
+  line-height: 2.4em; }
 
 #schooloptions {
   -webkit-appearance: none;
@@ -161,19 +180,19 @@ body {
 #infoPanel #schoolLabel {
   font-size: 2em;
   font-weight: 300;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-transform: lowercase;
   color: #507292; }
 
 #infoPanel #addressLabel {
   font-size: 2em;
   font-weight: 300;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-transform: lowercase;
   color: #507292; }
 
 #infoPanel h4 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #BFBFBF;
   font-size: .8em;
   font-weight: 500;
@@ -181,7 +200,7 @@ body {
   text-transform: uppercase; }
 
 #infoPanel h5 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: .7em;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -210,7 +229,7 @@ body {
 .flexchild p {
   font-size: 4em;
   font-weight: 700;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #507292;
   margin: 0 auto; }
 
@@ -220,30 +239,51 @@ body {
 /* -----------------------------------*/
 /* ---           comments          ---*/
 /* -----------------------------------*/
-.comment h3 {
-  font-family: 'Roboto', sans-serif;
+.comment {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 1em 0; }
+
+.comment-body {
+  flex: 1 1 3em;
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-left: 2em;
+  color: #7F7F7F; }
+
+.comment-author {
+  flex: 1 1 3em;
   font-size: 1em;
   font-weight: 700;
   letter-spacing: 0.1em;
   margin-left: 2em;
-  color: #507292; }
+  color: #BFBFBF; }
 
-.comment h4 {
-  font-family: 'Roboto', sans-serif;
+.comment-field {
+  width: 100%;
+  margin-bottom: 1em;
+  font-size: .9em;
+  color: #7F7F7F;
+  font-weight: 300;
+  padding: .5em 1em;
+  border: 1px solid gray;
+  border-radius: .2em;
+  color: #555555;
+  font-weight: 300; }
+
+.create-comment {
+  cursor: pointer;
+  margin: 0;
+  padding: .5em 2em;
+  background: #636363;
+  border-radius: .2em;
+  border: none;
+  color: #fff;
   font-size: 1em;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  margin-left: 2em;
-  color: #507292; }
-
-.comment p {
-  font-family: 'Roboto', sans-serif;
-  font-size: .7em;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  margin-left: 2em;
-  margin-bottom: 4em;
-  color: #507292; }
+  font-weight: 400; }
 
 @media (min-width: 0) {
   #map {

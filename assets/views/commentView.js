@@ -1,8 +1,9 @@
 var CommentView = function(comment){
   this.comment = comment;
-  this.$el = $("<div class='comment'></div>");
+  this.$el = $("<ul class='comment'></ul>");
   this.render();
 };
+
 
 CommentView.prototype ={
   render: function(){
@@ -12,14 +13,12 @@ CommentView.prototype ={
     self.$el.html(self.commentTemplate(self.comment));
     // append the .$el to the div with class artists in our view.
     var commentDiv = $(".comments")
-    commentDiv.append(self.$el);
+    commentDiv.prepend(self.$el);
   },
   commentTemplate: function(comment){
-    var html = $("<div>");
-    html.append("<h3>" + comment.body + "</h3>");
-    console.log(comment.userId)
+    var html = $("<li class='comment-body'>"+ comment.body + "</li>");
     User.fetchOne(comment.userId).then(function(user){
-      html.append("<p>Posted by: " + user.username + "</p>");
+      html.append("<li class='comment-author'>Posted by: " + user.username + "</li>");
     })
     return(html);
   }

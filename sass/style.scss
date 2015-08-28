@@ -1,7 +1,42 @@
+/* -----------------------------------*/
+/* ---        VARIABLES            ---*/
+/* -----------------------------------*/
+
+$gray-loud-color: #7F7F7F;
+$gray-quiet-color: #BFBFBF;
+$loud-color: #507292;
+$quiet-color: #111;
+
+$link-color: #34495e;
+$link-hover-color: saturate(#34495e, 20%);
+$link-visited-color: purple;
+
+$base-font-family: 'Roboto', sans-serif;
+$base-font-weight: 300;
+
+/*
+ * Typography
+ */
+
+.link {
+  color: $link-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $link-visited-color;
+  }
+
+  &:hover, &:visited:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+/* -----------------------------------*/
+/* ---          IMPORTS            ---*/
+/* -----------------------------------*/
+
 @import 'partials/resets';
-
 @import 'partials/columns';
-
 @import 'partials/core';
-
 @import 'partials/mediaqueries';
