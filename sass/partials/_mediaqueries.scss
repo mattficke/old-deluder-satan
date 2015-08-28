@@ -1,3 +1,7 @@
+body {
+	height: 100%;
+}
+
 @media(min-width: 0) {
 	#map {
 		height: 50vh;
@@ -19,6 +23,7 @@
 	#infoPanel {
 		width: 41.66vw;
 		margin: 0 auto;
+		overflow: scroll;
 	}
 
 	.column {

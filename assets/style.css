@@ -215,16 +215,20 @@ body {
 /* -----------------------------------*/
 .flexcontain {
   display: flex;
-  flex-direction: row;
   flex-flow: row wrap;
   text-align: center;
-  padding: 0 1em; }
+  border-top: 1px solid #ecf0f1;
+  margin: 0 .2em; }
 
 .flexchild {
   flex: 1 1 3em;
-  border: 1px solid #BFBFBF;
-  margin: .4em;
-  border-radius: .4em; }
+  margin: .2em;
+  border-radius: .2em; }
+
+.flexchild-c {
+  flex: 1 1 auto;
+  margin: .2em;
+  border-radius: .2em; }
 
 .flexchild p {
   font-size: 4em;
@@ -239,33 +243,41 @@ body {
 /* -----------------------------------*/
 /* ---           comments          ---*/
 /* -----------------------------------*/
-.comment {
+.comment-box {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   display: flex;
-  flex-flow: row wrap;
-  margin: 1em 0; }
+  flex-flow: column nowrap;
+  border-top: 1px solid #ecf0f1;
+  margin: .2em .4em;
+  margin-bottom: 2em; }
+
+.comment-form {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-flow: row wrap; }
 
 .comment-body {
-  flex: 1 1 3em;
+  flex: 1 1 4em;
   font-size: 1em;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  margin-left: 2em;
+  line-height: 1.2em;
+  margin: 1em 1.2em;
   color: #7F7F7F; }
 
 .comment-author {
   flex: 1 1 3em;
-  font-size: 1em;
+  font-size: .86em;
   font-weight: 700;
   letter-spacing: 0.1em;
-  margin-left: 2em;
+  margin-top: 1em;
   color: #BFBFBF; }
 
 .comment-field {
-  width: 100%;
-  margin-bottom: 1em;
-  font-size: .9em;
+  flex: 2 1 auto;
+  font-size: 1em;
+  margin: .4em .8em;
   color: #7F7F7F;
   font-weight: 300;
   padding: .5em 1em;
@@ -275,15 +287,19 @@ body {
   font-weight: 300; }
 
 .create-comment {
+  flex: 1 1 auto;
+  margin: .4em .8em;
   cursor: pointer;
-  margin: 0;
   padding: .5em 2em;
-  background: #636363;
+  background: #ffffff;
   border-radius: .2em;
-  border: none;
-  color: #fff;
+  border: 1px solid #507292;
+  color: #507292;
   font-size: 1em;
   font-weight: 400; }
+
+body {
+  height: 100%; }
 
 @media (min-width: 0) {
   #map {
@@ -299,7 +315,8 @@ body {
 
   #infoPanel {
     width: 41.66vw;
-    margin: 0 auto; }
+    margin: 0 auto;
+    overflow: scroll; }
 
   .column {
     float: left; } }

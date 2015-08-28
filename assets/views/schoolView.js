@@ -25,7 +25,7 @@ SchoolView.prototype = {
 
     // create comment click event handler
     $("input.create-comment").on("click", function(){
-      event.preventDefault();
+      event.preventDefault()
       var data = {
         body: $("input[name='body']").val(),
         userId: user.id,
