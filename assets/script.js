@@ -1,17 +1,29 @@
 $(document).ready(function() {
 
+  // draw map
   L.mapbox.accessToken = 'pk.eyJ1IjoibWF0dGZpY2tlIiwiYSI6ImJkN2FkOTFjNDM4OGQzNWUyYzY3NjU4ODM4ZDYwNDJmIn0.FLniij4ORShXSqRe6pcw-A';
   var map = L.mapbox.map('map', 'mapbox.streets')
     .setView([38.90, -77.01], 12);
 
+  // find all schools
   School.fetch().then(function(schools){
     drawSchools(schools)
     renderSearch(schools)
   })
 
+  // triggered if a school is selected from the drop-down menu
   $("#schooloptions").change(function() {
     $("#schooloptions option:selected").each(function(){
       var schoolId = $(this).val()
+      // open corresponding map marker popup
+      map.featureLayer.eachLayer(schoolId, function(marker){
+        console.log(schoolId)
+        console.log(marker.feature.properties.identity)
+        if(marker.feature.properties.identity == schoolId){
+          marker.openPopup();
+        }
+      })
+      // render selected school
       School.fetchOne(schoolId).then(function(school){
         var view = new SchoolView(school)
       })
@@ -28,13 +40,15 @@ $(document).ready(function() {
       var name = school.name;
       options += '<option value="'+id+'">'+name+'</option>';
     })
-    //at the end of the loop, add the options string to the datalist
+    //at the end of the loop, add the options string to the list
     document.getElementById('schooloptions').innerHTML = options;
   }
 
+  // mark each school on the map with a pin
   function drawSchools(schools) {
     schools.forEach(function(school){
 
+      // geocode from school address
       var url = "https://api.mapbox.com/v4/geocode/mapbox.places/" + school.address + ", Washington, District of Columbia.json?proximity=-77,38.9&access_token=pk.eyJ1IjoibWF0dGZpY2tlIiwiYSI6ImJkN2FkOTFjNDM4OGQzNWUyYzY3NjU4ODM4ZDYwNDJmIn0.FLniij4ORShXSqRe6pcw-A"
       $.getJSON(url).then(function(response){
         var schoolMapList = L.mapbox.featureLayer({
@@ -67,20 +81,3 @@ $(document).ready(function() {
     })
   }
 });
-      //// Start Search
-      function viewSchool(id){
-        //make sure id is a number
-        if (Number(id)){
-            document.getElementById('searchbox').value = ""
-          var url = "/schools/" + id + "/health-report"
-          $.getJSON(url).then(function(response){
-            console.log("The response is" + response)
-            document.getElementById('schoolLabel').innerHTML = response.name;
-            document.getElementById('addressLabel').innerHTML = response.address;
-            document.getElementById('riskLabel').innerHTML = response.riskCategory;
-            document.getElementById('criticalLabel').innerHTML =  response.numberCritical;
-            document.getElementById('noncriticalLabel').innerHTML = response.numberNoncritical;
-          })
-        }
-      }
-      //// End Search
