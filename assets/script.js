@@ -15,20 +15,11 @@ $(document).ready(function() {
   $("#schooloptions").change(function() {
     $("#schooloptions option:selected").each(function(){
       var schoolId = $(this).val()
-      // open corresponding map marker popup
-      map.featureLayer.eachLayer(schoolId, function(marker){
-        console.log(schoolId)
-        console.log(marker.feature.properties.identity)
-        if(marker.feature.properties.identity == schoolId){
-          marker.openPopup();
-        }
-      })
       // render selected school
       School.fetchOne(schoolId).then(function(school){
         var view = new SchoolView(school)
       })
     })
-
   })
 
   function renderSearch(schools) {
@@ -73,6 +64,7 @@ $(document).ready(function() {
 
         schoolMapList.on('click', function(e){
           var schoolId = e.layer.feature.properties.identity
+          $("#schooloptions").val(schoolId.toString())
           School.fetchOne(schoolId).then(function(school){
             var view = new SchoolView(school)
           })
