@@ -148,6 +148,41 @@ body {
   text-decoration: none;
   line-height: 2.4em; }
 
+.auth-container {
+  display: flex;
+  flex-flow: column nowrap; }
+
+.user-entry {
+  flex: 1 1 auto;
+  font-size: 1em;
+  margin: .4em .8em;
+  color: #7F7F7F;
+  font-weight: 300;
+  padding: .5em 1em;
+  border: 1px solid gray;
+  border-radius: .2em;
+  color: #555555;
+  font-weight: 300; }
+
+.user-submit {
+  flex: 1 1 auto;
+  margin: .4em .8em;
+  cursor: pointer;
+  padding: .5em 2em;
+  background: #ffffff;
+  border-radius: .2em;
+  border: 1px solid #507292;
+  color: #507292;
+  font-size: 1em;
+  font-weight: 400; }
+
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #507292;
+  font-size: 2em;
+  margin: .5em; }
+
 #schooloptions {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -174,8 +209,9 @@ body {
   font-size: 2em;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  line-height: 1.2em;
   color: #7F7F7F;
-  margin: 0 0 1em 1em; }
+  margin: 0 1em 1em 1em; }
 
 #infoPanel #schoolLabel {
   font-size: 2em;
@@ -311,11 +347,12 @@ body {
 @media (min-width: 40em) {
   #map {
     height: 100vh;
-    width: 58.33vw; }
+    width: 58.33vw;
+    position: fixed; }
 
   #infoPanel {
     width: 41.66vw;
-    margin: 0 auto;
+    margin-left: 58.33vw;
     overflow: scroll; }
 
   .column {

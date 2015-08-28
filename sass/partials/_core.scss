@@ -40,6 +40,45 @@ body {
 	line-height: 2.4em;
 }
 
+.auth-container {
+  display: flex;
+	flex-flow: column nowrap;
+}
+
+.user-entry {
+  flex: 1 1 auto;
+  font-size: 1em;
+  margin: .4em .8em;
+  color: $gray-loud-color;
+  font-weight: 300;
+  padding: .5em 1em;
+  border: 1px solid gray;
+  border-radius: .2em;
+  color: #555555;
+  font-weight: 300;
+}
+
+.user-submit {
+  flex: 1 1 auto;
+  margin: .4em .8em;
+  cursor: pointer;
+  padding: .5em 2em;
+  background: #ffffff;
+  border-radius: .2em;
+  border: 1px solid $loud-color;
+  color: $loud-color;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+h6 {
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  color: $loud-color;
+  font-size: 2em;
+  margin: .5em;
+}
+
 // .sign-in {
 // 	border-right: 2px solid #ecf0f1;
 // }
@@ -76,8 +115,9 @@ body {
 	font-size: 2em;
 	font-family: $base-font-family;
 	font-weight: $base-font-weight;
+  line-height: 1.2em;
 	color: #7F7F7F;
-	margin: 0 0 1em 1em;
+	margin: 0 1em 1em 1em;
 }
 
 #infoPanel #schoolLabel {

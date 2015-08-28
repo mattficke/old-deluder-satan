@@ -18,11 +18,12 @@ body {
 	#map {
 		height: 100vh;
 		width: 58.33vw;
+		position: fixed;
 	}
 
 	#infoPanel {
 		width: 41.66vw;
-		margin: 0 auto;
+		margin-left: 58.33vw;
 		overflow: scroll;
 	}
 
