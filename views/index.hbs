@@ -1,20 +1,23 @@
-<!-- <div class="row header">
-  <div class="column column-12">
-    <h1>Old Deluder Satan</h1>
-  </div>
-</div> -->
-
 <div class="row main">
-  <div id='map' class="map column column-7"></div>
+  <div id='map' class="map column column-lg-7"></div>
 
-  <div id='infoPanel' class="info column column-5">
+  <div id='infoPanel' class="info column column-lg-5">
 
     <section class="user-bar">
       {{#if user}}
-        Signed in as {{user}}.<a class="sign-out" href="/signout">Sign Out</a>
+        <div class="user-flex current-user">
+          Signed in as {{user}}.
+        </div>
+        <div class="user-flex">
+          <a class="sign-out" href="/signout">Sign Out</a>
+        </div>
       {{else}}
-        <a class="sign-in" href='/signin'>Sign In</a>
-        <a class="sign-up" href='/signup'>Sign Up</a>
+        <div class="user-flex">
+          <a class="sign-in" href='/signin'>Sign In</a>
+        </div>
+        <div class="user-flex">
+          <a class="sign-up" href='/signup'>Sign Up</a>
+        </div>
       {{/if}}
     </section>
 
@@ -47,7 +50,7 @@
 
     </div>
 
-    <div class="comments"></div>
+      <div class="flexchild comments"></div>
 
   </div>
 

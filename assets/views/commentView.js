@@ -14,11 +14,13 @@ CommentView.prototype ={
     var commentDiv = $(".comments")
     commentDiv.append(self.$el);
   },
-  commentTemplate: function(comment, user){
-    // var username = $.getJSON()
+  commentTemplate: function(comment){
     var html = $("<div>");
     html.append("<h3>" + comment.body + "</h3>");
-    html.append("<p>Posted by: User # " + comment.userId + "</p>");
+    console.log(comment.userId)
+    User.fetchOne(comment.userId).then(function(user){
+      html.append("<p>Posted by: " + user.username + "</p>");
+    })
     return(html);
   }
 };

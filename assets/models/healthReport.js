@@ -5,6 +5,7 @@ var HealthReport = function(info){
   this.dateInspected = info.dateInspectedl
   this.reportUrl = info.reportUrl;
   this.schoolId = info.schoolId;
+  this.id = info.id;
 }
 
 

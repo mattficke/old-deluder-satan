@@ -104,26 +104,30 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility; }
 
+/* -----------------------------------*/
+/* ---        drop and sign        ---*/
+/* -----------------------------------*/
 .user-bar {
-  width: 100%;
-  height: 3em;
-  background-color: #FAFCFC;
+  display: flex;
+  flex-flow: row wrap;
   text-align: center;
+  background-color: #FAFCFC;
   -webkit-box-shadow: 0 8px 6px -6px black;
   -moz-box-shadow: 0 8px 6px -6px black;
   box-shadow: 0 8px 6px -6px black; }
 
-.sign-in, .sign-out, .sign-up {
+.user-flex {
+  flex: 1 1 auto;
+  padding: 0 1em;
+  margin: 0 auto; }
+
+.sign-in, .sign-out, .sign-up, .current-user {
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 1.2em;
-  padding: 0 3em;
   line-height: 2.4em;
   color: #7F7F7F; }
-
-.sign-in {
-  border-right: 2px solid #ecf0f1; }
 
 #schooloptions {
   -webkit-appearance: none;
@@ -144,41 +148,15 @@ body {
   color: #7F7F7F;
   padding-left: 1.4em; }
 
+/* -----------------------------------*/
+/* ---      name and address       ---*/
+/* -----------------------------------*/
 .name-and-address p, h2 {
   font-size: 2em;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: #7F7F7F;
   margin: 0 0 1em 1em; }
-
-.flexcontain {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  text-align: center;
-  padding: 0 1em; }
-
-.flexchild {
-  flex: 1 1 3em;
-  border: 1px solid #BFBFBF;
-  margin: .4em;
-  border-radius: .4em; }
-
-.flexchild p {
-  font-size: 4em;
-  font-weight: 700;
-  font-family: 'Roboto', sans-serif;
-  color: #507292;
-  margin: 0 auto; }
-
-.flexlabel {
-  margin: 1em 0; }
-
-#infoPanel {
-  margin: 0 auto; }
-
-.label {
-  margin: 2em 0 1em 2em; }
 
 #infoPanel #schoolLabel {
   font-size: 2em;
@@ -210,25 +188,80 @@ body {
   text-transform: uppercase;
   color: #888888; }
 
-@media (min-width: 0px) {
-  .map {
+.label {
+  margin: 2em 0 1em 2em; }
+
+/* -----------------------------------*/
+/* ---        flexy health         ---*/
+/* -----------------------------------*/
+.flexcontain {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  text-align: center;
+  padding: 0 1em; }
+
+.flexchild {
+  flex: 1 1 3em;
+  border: 1px solid #BFBFBF;
+  margin: .4em;
+  border-radius: .4em; }
+
+.flexchild p {
+  font-size: 4em;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  color: #507292;
+  margin: 0 auto; }
+
+.flexlabel {
+  margin: 1em 0; }
+
+/* -----------------------------------*/
+/* ---           comments          ---*/
+/* -----------------------------------*/
+.comment h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-left: 2em;
+  color: #507292; }
+
+.comment h4 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-left: 2em;
+  color: #507292; }
+
+.comment p {
+  font-family: 'Roboto', sans-serif;
+  font-size: .7em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-left: 2em;
+  margin-bottom: 4em;
+  color: #507292; }
+
+@media (min-width: 0) {
+  #map {
     height: 50vh;
     width: 100vw; }
 
-  .column-lg-5, .map.column-lg-7 {
-    width: 100%; } }
+  #infoPanel {
+    width: 100vw; } }
 @media (min-width: 40em) {
-  .map {
+  #map {
     height: 100vh;
     width: 58.33vw; }
 
+  #infoPanel {
+    width: 41.66vw;
+    margin: 0 auto; }
+
   .column {
-    float: left; }
-
-  .column-lg-5 {
-    width: 41.66%; }
-
-  .map.column-lg-7 {
-    width: 58.33%; } }
+    float: left; } }
 
 /*# sourceMappingURL=style.css.map */

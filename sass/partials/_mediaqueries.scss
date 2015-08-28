@@ -1,30 +1,28 @@
-@media(min-width: 0px) {
-	.map {
+@media(min-width: 0) {
+	#map {
 		height: 50vh;
 		width: 100vw;
 	}
 
-	.column-lg-5, .map.column-lg-7 {
-		width: 100%;
+	#infoPanel{
+		width: 100vw;
 	}
 
 }
 
 @media(min-width: 40em) {
-	.map {
+	#map {
 		height: 100vh;
 		width: 58.33vw;
 	}
 
-	.column {
-		float: left;
+	#infoPanel {
+		width: 41.66vw;
+		margin: 0 auto;
 	}
 
-	.column-lg-5 {
-		width: 41.66%;
-	}
-	.map.column-lg-7 {
-		width: 58.33%;
+	.column {
+		float: left;
 	}
 
 }
