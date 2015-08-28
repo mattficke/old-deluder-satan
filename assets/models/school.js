@@ -61,7 +61,17 @@ School.prototype = {
       })
     return request;
   },
-  postComment: function(comment) {
-    console.log(comment)
+  postComment: function(commentData) {
+    var self = this;
+    var url = '/comments'
+    var request = $.ajax({
+      url: url,
+      method: 'POST',
+      data: JSON.stringify(commentData),
+      contentType: 'application/json'
+    }).then(function(newComment){
+      console.log(newComment)
+    });
+    return request;
   }
 }

@@ -16,6 +16,12 @@ router.get('/users', function(req, res) {
   })
 })
 
+router.get('/users/:id', function(req, res) {
+  User.findById(req.params.id).then(function(user){
+    res.json({username: user.username, id: user.id})
+  })
+})
+
 router.get('/signup', function(req, res) {
   res.render('auth/signup')
 })
