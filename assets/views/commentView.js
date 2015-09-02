@@ -3,7 +3,7 @@ var CommentView = function(comment){
   this.$el = $("<ul class='comment'></ul>");
   this.render();
 };
-
+// this part looks right, not seeing any apparent code smells
 
 CommentView.prototype ={
   render: function(){
