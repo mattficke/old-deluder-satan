@@ -7,7 +7,7 @@ var LocalStrategy = require('passport-local').Strategy
 var bcrypt = require('bcrypt-nodejs')
 var DB = require('./config/connection');
 var User = DB.models.User;
-
+// solid
 app.use(require('express-session')({
   secret: 'deluder',
   resave: false,

@@ -11,6 +11,7 @@ SchoolView.prototype = {
     var self = this;
 
     self.getComments(self)
+    // for whatever reason it seems the .getComments function isn't working.
 
     // add school name & address to view
     $("#schoolLabel").html(self.school.name)
@@ -25,6 +26,7 @@ SchoolView.prototype = {
 
     // create comment click event handler
     $("input.create-comment").on("click", function(){
+      // i'm not sure if its the user thats messing stuff up slightly? but i'm not sure where all the user info is coming from.
       event.preventDefault()
       var data = {
         body: $("input[name='body']").val(),

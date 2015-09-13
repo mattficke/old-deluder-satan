@@ -3,7 +3,7 @@ var School = function(info) {
   this.address = info.address;
   this.id = info.id;
 }
-
+// i really like that you made class methods.
 School.fetch = function() {
   var request = $.getJSON('/schools')
     .then(function(response) {
@@ -45,6 +45,8 @@ School.prototype = {
       })
     return request;
   },
+
+  // not sure what exactly is going on with comments here, looks good for the most part, would have to spend more time debugging why it only shows up occassionally.
   fetchComments: function() {
     var url = '/schools/' + this.id + '/comments';
     var request = $.getJSON(url)

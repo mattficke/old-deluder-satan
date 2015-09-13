@@ -38,7 +38,12 @@ $(document).ready(function() {
   // mark each school on the map with a pin
   function drawSchools(schools) {
     schools.forEach(function(school){
-
+// hmm this can be dangerous. Whenever we start to make ajax calls in a loop,
+// tread carefully. Depending on whats going with references to any call backs
+// it could make debugging more difficult as well as be confusing with respect
+// to in which sequence code is executing off the stack. Trying to think of a better way,
+// but i'm at a loss if its just client side. One way would be to have a back end group all
+// of the data together as a get request and then execute a promise on that AJAX response
       // geocode from school address
       var url = "https://api.mapbox.com/v4/geocode/mapbox.places/" + school.address + ", Washington, District of Columbia.json?proximity=-77,38.9&access_token=pk.eyJ1IjoibWF0dGZpY2tlIiwiYSI6ImJkN2FkOTFjNDM4OGQzNWUyYzY3NjU4ODM4ZDYwNDJmIn0.FLniij4ORShXSqRe6pcw-A"
       $.getJSON(url).then(function(response){

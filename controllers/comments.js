@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var DB = require('../config/connection');
 var Comment = DB.models.Comment;
-
+// it looks as though your comments backend is strictly serving as an api. Will take a look at js! looks good though!
 function error(response, message) {
   response.status(500);
   response.json({error: message});

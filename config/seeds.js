@@ -4,7 +4,7 @@ var School = DB.models.School;
 var HealthReport = DB.models.HealthReport;
 var Comment = DB.models.Comment;
 var data = require("./cafeterias");
-
+// intense seed file, and finally the data mining was worth it!
 var schools = [];
 var healthReports = [];
 for (var i = 0; i < data.length; i++){
@@ -37,7 +37,7 @@ var comments = [
   {body: "I love this school!", userId: 2, schoolId: 1},
 ];
 
-
+// bulkCreate what is this!? teach me
 School.bulkCreate(schools).then(function() {
   console.log("Schools are seeded");
   HealthReport.bulkCreate(healthReports).then(function() {

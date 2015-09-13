@@ -4,12 +4,13 @@ var passport = require('passport')
 var bcrypt = require('bcrypt-nodejs')
 var DB = require('../config/connection');
 var User = DB.models.User;
-
+// nice, this is a coolhandrolled user auth, haven't seen it in express yet, looks to be working great on the heroku app as well
 function error(response, message) {
   response.status(500);
   response.json({error: message});
 }
 
+// interesting that there's json response for the user models themselves, wondering what the usecase of this is?
 router.get('/users', function(req, res) {
   User.findAll().then(function(users){
     res.json(users);
